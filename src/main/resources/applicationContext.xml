@@ -7,8 +7,8 @@
 
 	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
 
-	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
+<!-- 	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
 	<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
 		<property name="userDAO" ref="userDAO"></property>
-	</bean>
+	</bean> -->
 </beans>
