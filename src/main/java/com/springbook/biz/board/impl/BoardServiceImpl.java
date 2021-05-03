@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 import com.springbook.biz.board.BoardService;
 import com.springbook.biz.board.BoardVO;
 
-@Service("BoardService")
+@Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAO boardDAO; // BoardDAO 타입의 객체 찾아서 주입함! (DI)
