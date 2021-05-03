@@ -33,7 +33,7 @@ public class BoardDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
-			stmt.setString(1, vo.getTitile()); // 1부터 시
+			stmt.setString(1, vo.getTitle()); // 1부터 시
 			stmt.setString(2, vo.getWriter());
 			stmt.setString(3, vo.getContent());
 			stmt.executeUpdate(); 					
@@ -50,7 +50,7 @@ public class BoardDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_UPDATE);
-			stmt.setString(1, vo.getTitile());
+			stmt.setString(1, vo.getTitle());
 			stmt.setString(2, vo.getContent());
 			stmt.setInt(3, vo.getSeq());
 			stmt.executeUpdate();			
@@ -88,7 +88,7 @@ public class BoardDAO {
 			if(rs.next()) {
 				board = new BoardVO();
 				board.setSeq(rs.getInt("SEQ"));
-				board.setTitile(rs.getString("TITLE"));
+				board.setTitle(rs.getString("TITLE"));
 				board.setWriter(rs.getString("WRITER"));
 				board.setContent(rs.getString("CONTENT"));
 				board.setRegDate(rs.getDate("REGDATE"));
@@ -113,7 +113,7 @@ public class BoardDAO {
 			while(rs.next()) {
 				BoardVO board = new BoardVO();
 				board.setSeq(rs.getInt("SEQ"));
-				board.setTitile(rs.getString("TITLE"));
+				board.setTitle(rs.getString("TITLE"));
 				board.setWriter(rs.getString("WRITER"));
 				board.setContent(rs.getString("CONTENT"));
 				board.setRegDate(rs.getDate("REGDATE"));
@@ -127,6 +127,5 @@ public class BoardDAO {
 		}
 		return boardList;
 	}
-
 	
 }

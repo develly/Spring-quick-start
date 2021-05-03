@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class BoardVO {
 	private int seq;
-	private String titile;
+	private String title;
 	private String writer;
 	private String content;
 	private Date regDate;
@@ -16,11 +16,11 @@ public class BoardVO {
 	public void setSeq(int seq) {
 		this.seq = seq;
 	}
-	public String getTitile() {
-		return titile;
+	public String getTitle() {
+		return title;
 	}
-	public void setTitile(String titile) {
-		this.titile = titile;
+	public void setTitle(String titile) {
+		this.title = titile;
 	}
 	public String getWriter() {
 		return writer;
