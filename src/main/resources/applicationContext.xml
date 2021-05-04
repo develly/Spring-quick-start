@@ -23,4 +23,12 @@
 			<aop:before pointcut-ref="getPointcut" method="printLog"/>
 		</aop:aspect>
 	</aop:config>
+	
+	<bean id="around" class="com.springbook.biz.common.AroundAdvice"></bean>
+	<aop:config>
+		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>		
+		<aop:aspect ref="around">
+			<aop:around pointcut-ref="allPointcut" method="aroundLog"/>
+		</aop:aspect>
+	</aop:config>
 </beans>
