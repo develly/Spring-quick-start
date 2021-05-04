@@ -17,8 +17,10 @@
 	<bean id="log" class="com.springbook.biz.common.LogAdvice"></bean>
 	<aop:config>
 		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.*(..))" id="allPointcut"/>
+		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
+
 		<aop:aspect ref="log">
-			<aop:before pointcut-ref="allPointcut" method="printLog"/>
+			<aop:before pointcut-ref="getPointcut" method="printLog"/>
 		</aop:aspect>
 	</aop:config>
 </beans>
