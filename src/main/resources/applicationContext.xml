@@ -40,4 +40,12 @@
 			<aop:after-returning method="afterLog" pointcut-ref="getPointcut" returning="returnObj"/>
 		</aop:aspect>
 	</aop:config> 
+	
+ 	<bean id="afterThowing" class="com.springbook.biz.common.AfterThrowingAdvice"></bean>
+	<aop:config>
+		<aop:aspect ref="afterThowing">
+			<aop:after-throwing method="exceptionLog" pointcut-ref="allPointcut" throwing="exceptObj"/>
+		</aop:aspect>
+	</aop:config> 
+	
 </beans>
