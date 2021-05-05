@@ -31,4 +31,13 @@
 			<aop:around pointcut-ref="allPointcut" method="aroundLog"/>
 		</aop:aspect>
 	</aop:config>
+	
+ 	<bean id="afterReturning" class="com.springbook.biz.common.AfterReturning"></bean>
+	<aop:config>
+<!-- 		<aop:pointcut expression="execution(* com.springbook.biz..*Impl.get*(..))" id="getPointcut"/>
+ -->		
+		<aop:aspect ref="afterReturning">
+			<aop:after-returning method="afterLog" pointcut-ref="getPointcut" returning="returnObj"/>
+		</aop:aspect>
+	</aop:config> 
 </beans>
