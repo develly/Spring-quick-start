@@ -55,6 +55,9 @@ public class UserVO {
 		this.role = role;
 	}
 	
-	
+	public String toString() {
+		return "BoardVO [id=" + id + ", password=" + password 
+				+ ", name=" + name + ", role=" + role +"]"; 
+	}
 
 }
