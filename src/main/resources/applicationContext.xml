@@ -8,6 +8,7 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 	<context:component-scan base-package="com.springbook.biz"></context:component-scan>
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
 <!-- 	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
 	<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
