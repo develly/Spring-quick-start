@@ -6,6 +6,7 @@ import org.springframework.context.support.AbstractApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 // 실행시 h2 서버 끈 상태로 run (터미널이 웹에 켜져있으면 실행 안됨)
+// spring jdbc Template 사용할 때는 h2 서버 켜놓기 
 // java application 모드로 run
 public class BoardServiceClient {
 	public static void main(String[] args) {
