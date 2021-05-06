@@ -33,7 +33,7 @@ public class BoardDAO {
 		try {
 			conn = JDBCUtil.getConnection();
 			stmt = conn.prepareStatement(BOARD_INSERT);
-			stmt.setString(1, vo.getTitle()); // 1부터 시
+			stmt.setString(1, vo.getTitle()); // 1부터 시작 
 			stmt.setString(2, vo.getWriter());
 			stmt.setString(3, vo.getContent());
 			stmt.executeUpdate(); 					
@@ -126,6 +126,6 @@ public class BoardDAO {
 			JDBCUtil.close(rs, stmt, conn);
 		}
 		return boardList;
-	}
+	}	
 	
 }
