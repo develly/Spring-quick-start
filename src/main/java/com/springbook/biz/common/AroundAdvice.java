@@ -3,7 +3,7 @@ package com.springbook.biz.common;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+//import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
@@ -12,10 +12,11 @@ import org.springframework.util.StopWatch;
 @Service
 @Aspect
 public class AroundAdvice {
-	@Pointcut("execution(* com.springbook.biz..*Impl.*(..))")
-	public void allPointcut() {}
+// PointcutCommon으로 인해 필요없어
+//	@Pointcut("execution(* com.springbook.biz..*Impl.*(..))")
+//	public void allPointcut() {}
 	
-	@Around("allPointcut()") //바인드 변수가 없을 때는 이렇게 선언. 있으면 pointcut 사용 
+	@Around("PointcutCommon.allPointcut()") //바인드 변수가 없을 때는 이렇게 선언. 있으면 pointcut 사용 
 	public Object aroundLog(ProceedingJoinPoint pjp) throws Throwable {
 		System.out.println("[Around BEFORE]: 비즈니스 메소드 수행 전에 처리할 내용");
 		String method = pjp.getSignature().getName();
