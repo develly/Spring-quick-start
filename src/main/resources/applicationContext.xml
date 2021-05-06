@@ -28,6 +28,18 @@
 		<property name="dataSource" ref="datasource"></property>
 	</bean>
 	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut expression="execution(* com.springbook.biz..*(..))" id="txPointcut"/>
+		<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+	</aop:config>
+	
 <!-- 	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
 	<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
 		<property name="userDAO" ref="userDAO"></property>
