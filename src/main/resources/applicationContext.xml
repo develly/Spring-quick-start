@@ -17,6 +17,10 @@
 		<property name="username" value="{jdbc.name}"></property>
 		<property name="password" value="{jdbc.password}"></property>
 	</bean>
+	<!-- Spring JDBC 설정 -->
+	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+		<property name="dataSource" ref="dataSource"></property>
+	</bean> 
 	
 <!-- 	<bean id="userDAO" class="com.springbook.biz.user.impl.UserDAO"></bean>
 	<bean id="userService" class="com.springbook.biz.user.impl.UserServiceImpl">
