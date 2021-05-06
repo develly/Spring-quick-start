@@ -11,7 +11,7 @@ import com.springbook.biz.board.BoardVO;
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
-	private BoardDAO boardDAO; // BoardDAO 타입의 객체 찾아서 주입함! (DI)
+	private BoardDAOSpring boardDAO; // BoardDAOSpring 타입의 객체 찾아서 주입함! (DI)
 
 	@Override
 	public void insertBoard(BoardVO vo) {
